@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Luxeillum Catalogue</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: #000;
+      background: #e8ddd0; /* close to original beige */
+      line-height: 1.4;
+    }
+
+    .page {
+      width: 210mm;
+      height: 297mm;
+      background: #e8ddd0;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* COVER PAGE */
+    .cover-container {
+      width: 100%;
+      height: 297mm;
+    }
+
+    .cover-left {
+      float: left;
+      width: 50%;
+      height: 297mm;
+      padding: 80px 60px;
+    }
+
+    .cover-logo {
+      font-size: 72px;
+      font-weight: normal;
+      margin-bottom: 120px;
+      letter-spacing: -1px;
+    }
+
+    .cover-subtitle {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 80px;
+    }
+
+    .cover-year {
+      font-size: 14px;
+      font-weight: normal;
+    }
+
+    .cover-right {
+      float: right;
+      width: 50%;
+      height: 297mm;
+    }
+
+    .cover-right img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* GENERIC PRODUCT PAGE LAYOUT */
+
+    .product-container {
+      width: 100%;
+      height: 297mm;
+    }
+
+    .product-left {
+      float: left;
+      width: 40%;
+      height: 297mm;
+      padding: 50px 30px 30px 50px;
+    }
+
+    .product-image-box {
+      width: 100%;
+      height: 380px;
+      background: linear-gradient(135deg, #7a8b96 0%, #b5c0c8 100%);
+      margin-bottom: 25px;
+    }
+
+    .product-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-desc {
+      font-size: 11px;
+      line-height: 1.6;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    .product-tagline {
+      font-size: 9px;
+      font-style: italic;
+      line-height: 1.5;
+      padding-top: 15px;
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .product-middle {
+      float: left;
+      width: 20%;
+      height: 297mm;
+      background: #cbbda9;
+      text-align: center;
+      padding-top: 120px;
+    }
+
+    .product-name-vert {
+      font-size: 56px;
+      font-weight: normal;
+      letter-spacing: 1px;
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      display: inline-block;
+    }
+
+    .product-right {
+      float: right;
+      width: 40%;
+      height: 297mm;
+      padding: 50px 50px 30px 30px;
+    }
+
+    .specs-grid {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .specs-col {
+      float: left;
+      width: 48%;
+      margin-right: 4%;
+    }
+
+    .specs-col:last-child {
+      margin-right: 0;
+    }
+
+    .spec-title {
+      font-size: 11px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      margin-top: 0;
+    }
+
+    .spec-title.mt {
+      margin-top: 18px;
+    }
+
+    .spec-line {
+      font-size: 10px;
+      line-height: 1.5;
+      margin-bottom: 2px;
+    }
+
+    .spec-block {
+      font-size: 10px;
+      margin-bottom: 14px;
+      line-height: 1.4;
+    }
+
+    .price-section {
+      margin-top: 40px;
+      margin-bottom: 25px;
+    }
+
+    .price-heading {
+      font-size: 16px;
+      font-weight: normal;
+      text-align: center;
+      margin-bottom: 18px;
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .price-table th {
+      padding: 9px 6px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: bold;
+      border-bottom: 1px solid #000;
+    }
+
+    .price-table th:first-child {
+      text-align: left;
+    }
+
+    .price-table td {
+      padding: 11px 6px;
+      text-align: center;
+      font-size: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .price-table td:first-child {
+      text-align: left;
+    }
+
+    .product-footer {
+      border-top: 1px solid rgba(0, 0, 0, 0.3);
+      padding-top: 18px;
+      margin-top: 20px;
+    }
+
+    .footer-website {
+      font-size: 10px;
+      margin-bottom: 8px;
+    }
+
+    .footer-contact {
+      font-size: 9px;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    /* VARIATION PAGES */
+
+    .variations-container {
+      width: 100%;
+      height: 297mm;
+    }
+
+    .variations-left {
+      float: left;
+      width: 60%;
+      height: 297mm;
+      padding: 50px 30px;
+    }
+
+    .var-row {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    .var-row::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    .var-item {
+      float: left;
+      width: 31%;
+      margin-right: 3.5%;
+      text-align: center;
+    }
+
+    .var-item:last-child {
+      margin-right: 0;
+    }
+
+    .var-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #7a8b96 0%, #b5c0c8 100%);
+      margin-bottom: 10px;
+    }
+
+    .var-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .var-label {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .variations-right {
+      float: right;
+      width: 40%;
+      height: 297mm;
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .diagram-box {
+      width: 100%;
+      margin-top: 50px;
+    }
+
+    .diagram-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ==================== PAGE 1: COVER ==================== -->
+<div class="page">
+  <div class="cover-container clearfix">
+    <div class="cover-left">
+      <h1 class="cover-logo">{{cover_logo}}</h1>
+      <p class="cover-subtitle">{{cover_subtitle}}</p>
+      <p class="cover-year">{{cover_year}}</p>
+    </div>
+    <div class="cover-right">
+      <img src="{{cover_main_image}}" alt="Cover">
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 2: ECLIPSE PRODUCT (Wireless + Remote) ==================== -->
+<div class="page">
+  <div class="product-container clearfix">
+
+    <div class="product-left">
+      <div class="product-image-box">
+        <img src="{{eclipse_main_image}}" alt="Eclipse">
+      </div>
+      <div class="product-desc">
+        {{eclipse_description}}
+      </div>
+      <div class="product-tagline">
+        {{eclipse_tagline}}
+      </div>
+    </div>
+
+    <div class="product-middle">
+      <div class="product-name-vert">{{eclipse_product_name}}</div>
+    </div>
+
+    <div class="product-right">
+      <div class="specs-grid clearfix">
+        <div class="specs-col">
+          <h3 class="spec-title">Product Dimension</h3>
+          <div class="spec-line">L: {{eclipse_dimension_l}}</div>
+          <div class="spec-line">M: {{eclipse_dimension_m}}</div>
+          <div class="spec-line">S: {{eclipse_dimension_s}}</div>
+
+          <h3 class="spec-title mt">Product Weight</h3>
+          <div class="spec-line">L: {{eclipse_weight_l}}</div>
+          <div class="spec-line">M: {{eclipse_weight_m}}</div>
+          <div class="spec-line">S: {{eclipse_weight_s}}</div>
+        </div>
+
+        <div class="specs-col">
+          <h3 class="spec-title">Color Temperature:</h3>
+          <div class="spec-block">{{eclipse_color_temp}}</div>
+
+          <h3 class="spec-title">Material:</h3>
+          <div class="spec-block">{{eclipse_material}}</div>
+
+          <h3 class="spec-title">Run Time on Full Charge:</h3>
+          <div class="spec-line">High: {{eclipse_runtime_high}}</div>
+          <div class="spec-line">Medium: {{eclipse_runtime_medium}}</div>
+          <div class="spec-line">Low: {{eclipse_runtime_low}}</div>
+        </div>
+      </div>
+
+      <div class="price-section">
+        <h2 class="price-heading">Unit Price</h2>
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Wireless + Remote</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0–19 Units</td>
+              <td>{{eclipse_price_wireless_0_19}}</td>
+            </tr>
+            <tr>
+              <td>20+ Units</td>
+              <td>{{eclipse_price_wireless_20}}</td>
+            </tr>
+            <tr>
+              <td>40+ Units</td>
+              <td>{{eclipse_price_wireless_40}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="product-footer">
+        <div class="footer-website">{{eclipse_website_url}}</div>
+        <div class="footer-contact">
+          {{eclipse_contact_text}}<br>{{eclipse_contact_email}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 3: ECLIPSE VARIATIONS ==================== -->
+<div class="page">
+  <div class="variations-container clearfix">
+    <div class="variations-left">
+
+      <!-- Row 1: Grey -->
+      <div class="var-row">
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{eclipse_grey_s_image}}" alt="Grey S">
+          </div>
+          <p class="var-label">{{eclipse_grey_s_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{eclipse_grey_m_image}}" alt="Grey M">
+          </div>
+          <p class="var-label">{{eclipse_grey_m_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{eclipse_grey_l_image}}" alt="Grey L">
+          </div>
+          <p class="var-label">{{eclipse_grey_l_label}}</p>
+        </div>
+      </div>
+
+      <!-- Row 2: Coffee -->
+      <div class="var-row">
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{eclipse_coffee_s_image}}" alt="Coffee S">
+          </div>
+          <p class="var-label">{{eclipse_coffee_s_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{eclipse_coffee_m_image}}" alt="Coffee M">
+          </div>
+          <p class="var-label">{{eclipse_coffee_m_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{eclipse_coffee_l_image}}" alt="Coffee L">
+          </div>
+          <p class="var-label">{{eclipse_coffee_l_label}}</p>
+        </div>
+      </div>
+
+      <!-- Row 3: Black -->
+      <div class="var-row">
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{eclipse_black_s_image}}" alt="Black S">
+          </div>
+          <p class="var-label">{{eclipse_black_s_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{eclipse_black_m_image}}" alt="Black M">
+          </div>
+          <p class="var-label">{{eclipse_black_m_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{eclipse_black_l_image}}" alt="Black L">
+          </div>
+          <p class="var-label">{{eclipse_black_l_label}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="variations-right">
+      <div class="diagram-box">
+        <img src="{{eclipse_dimension_diagram}}" alt="Eclipse Dimensions">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 4: ELYSIAN PRODUCT (Wireless + Remote) ==================== -->
+<div class="page">
+  <div class="product-container clearfix">
+
+    <div class="product-left">
+      <div class="product-image-box">
+        <img src="{{elysian_main_image}}" alt="Elysian">
+      </div>
+      <div class="product-desc">
+        {{elysian_description}}
+      </div>
+      <div class="product-tagline">
+        {{elysian_tagline}}
+      </div>
+    </div>
+
+    <div class="product-middle">
+      <div class="product-name-vert">{{elysian_product_name}}</div>
+    </div>
+
+    <div class="product-right">
+      <div class="specs-grid clearfix">
+        <div class="specs-col">
+          <h3 class="spec-title">Product Dimension:</h3>
+          <div class="spec-block">{{elysian_dimension}}</div>
+
+          <h3 class="spec-title">Product Weight</h3>
+          <div class="spec-line">Metallic Finish:</div>
+          <div class="spec-block">{{elysian_weight_metallic}}</div>
+          <div class="spec-line">Matte Finish:</div>
+          <div class="spec-block">{{elysian_weight_matte}}</div>
+        </div>
+
+        <div class="specs-col">
+          <h3 class="spec-title">Color Temperature:</h3>
+          <div class="spec-block">{{elysian_color_temp}}</div>
+
+          <h3 class="spec-title">Material:</h3>
+          <div class="spec-block">{{elysian_material}}</div>
+
+          <h3 class="spec-title">Run Time on Full Charge:</h3>
+          <div class="spec-line">High: {{elysian_runtime_high}}</div>
+          <div class="spec-line">Medium: {{elysian_runtime_medium}}</div>
+          <div class="spec-line">Low: {{elysian_runtime_low}}</div>
+        </div>
+      </div>
+
+      <div class="price-section">
+        <h2 class="price-heading">Unit Price</h2>
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Wireless + Remote</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0–19 Units</td>
+              <td>{{elysian_price_wireless_0_19}}</td>
+            </tr>
+            <tr>
+              <td>20+ Units</td>
+              <td>{{elysian_price_wireless_20}}</td>
+            </tr>
+            <tr>
+              <td>40+ Units</td>
+              <td>{{elysian_price_wireless_40}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="product-footer">
+        <div class="footer-website">{{elysian_website_url}}</div>
+        <div class="footer-contact">
+          {{elysian_contact_text}}<br>{{elysian_contact_email}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 5: ELYSIAN VARIATIONS ==================== -->
+<div class="page">
+  <div class="variations-container clearfix">
+
+    <div class="variations-left">
+
+      <div class="var-row">
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{elysian_matte_silver_image}}" alt="Matte Silver">
+          </div>
+          <p class="var-label">{{elysian_matte_silver_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{elysian_matte_black_image}}" alt="Matte Black">
+          </div>
+          <p class="var-label">{{elysian_matte_black_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{elysian_matte_gold_image}}" alt="Matte Gold">
+          </div>
+          <p class="var-label">{{elysian_matte_gold_label}}</p>
+        </div>
+      </div>
+
+      <div class="var-row">
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{elysian_matte_coffee_image}}" alt="Matte Coffee">
+          </div>
+          <p class="var-label">{{elysian_matte_coffee_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{elysian_metallic_bronze_image}}" alt="Metallic Bronze">
+          </div>
+          <p class="var-label">{{elysian_metallic_bronze_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{elysian_metallic_silver_image}}" alt="Metallic Silver">
+          </div>
+          <p class="var-label">{{elysian_metallic_silver_label}}</p>
+        </div>
+      </div>
+
+      <div class="var-row">
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{elysian_metallic_gold_image}}" alt="Metallic Gold">
+          </div>
+          <p class="var-label">{{elysian_metallic_gold_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{elysian_dome_bronze_image}}" alt="Bronze Dome">
+          </div>
+          <p class="var-label">{{elysian_dome_bronze_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{elysian_dome_silver_image}}" alt="Silver Dome">
+          </div>
+          <p class="var-label">{{elysian_dome_silver_label}}</p>
+        </div>
+      </div>
+
+      <div class="var-row">
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{elysian_dome_gold_image}}" alt="Gold Dome">
+          </div>
+          <p class="var-label">{{elysian_dome_gold_label}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="variations-right">
+      <div class="diagram-box">
+        <img src="{{elysian_dimension_diagram}}" alt="Elysian Dimensions">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 6: LUNA PRODUCT (Wireless + Remote) ==================== -->
+<div class="page">
+  <div class="product-container clearfix">
+
+    <div class="product-left">
+      <div class="product-image-box">
+        <img src="{{luna_main_image}}" alt="Luna">
+      </div>
+      <div class="product-desc">
+        {{luna_description}}
+      </div>
+      <div class="product-tagline">
+        {{luna_tagline}}
+      </div>
+    </div>
+
+    <div class="product-middle">
+      <div class="product-name-vert">{{luna_product_name}}</div>
+    </div>
+
+    <div class="product-right">
+      <div class="specs-grid clearfix">
+        <div class="specs-col">
+          <h3 class="spec-title">Product Dimension:</h3>
+          <div class="spec-block">{{luna_dimension}}</div>
+
+          <h3 class="spec-title">Product Weight:</h3>
+          <div class="spec-block">{{luna_weight}}</div>
+        </div>
+
+        <div class="specs-col">
+          <h3 class="spec-title">Color Temperature:</h3>
+          <div class="spec-block">{{luna_color_temp}}</div>
+
+          <h3 class="spec-title">Material:</h3>
+          <div class="spec-block">{{luna_material}}</div>
+
+          <h3 class="spec-title">Run Time on Full Charge:</h3>
+          <div class="spec-line">High: {{luna_runtime_high}}</div>
+          <div class="spec-line">Medium: {{luna_runtime_medium}}</div>
+          <div class="spec-line">Low: {{luna_runtime_low}}</div>
+        </div>
+      </div>
+
+      <div class="price-section">
+        <h2 class="price-heading">Unit Price</h2>
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Wireless + Remote</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0–19 Units</td>
+              <td>{{luna_price_wireless_0_19}}</td>
+            </tr>
+            <tr>
+              <td>20+ Units</td>
+              <td>{{luna_price_wireless_20}}</td>
+            </tr>
+            <tr>
+              <td>40+ Units</td>
+              <td>{{luna_price_wireless_40}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="product-footer">
+        <div class="footer-website">{{luna_website_url}}</div>
+        <div class="footer-contact">
+          {{luna_contact_text}}<br>{{luna_contact_email}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 7: LUNA VARIATIONS ==================== -->
+<div class="page">
+  <div class="variations-container clearfix">
+
+    <div class="variations-left">
+      <div class="var-row">
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{luna_metallic_gold_image}}" alt="Metallic Gold">
+          </div>
+          <p class="var-label">{{luna_metallic_gold_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{luna_matte_black_image}}" alt="Matte Black">
+          </div>
+          <p class="var-label">{{luna_matte_black_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{luna_metallic_bronze_image}}" alt="Metallic Bronze">
+          </div>
+          <p class="var-label">{{luna_metallic_bronze_label}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="variations-right">
+      <div class="diagram-box">
+        <img src="{{luna_dimension_diagram}}" alt="Luna Dimensions">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 8: SOLARA PRODUCT (Wireless + Remote) ==================== -->
+<div class="page">
+  <div class="product-container clearfix">
+
+    <div class="product-left">
+      <div class="product-image-box">
+        <img src="{{solara_main_image}}" alt="Solara">
+      </div>
+      <div class="diagram-box" style="margin-top: 30px;">
+        <img src="{{solara_size_diagram}}" alt="Solara Sizes">
+      </div>
+    </div>
+
+    <div class="product-middle">
+      <div class="product-name-vert">{{solara_product_name}}</div>
+    </div>
+
+    <div class="product-right">
+      <div class="specs-grid clearfix">
+        <div class="specs-col">
+          <h3 class="spec-title">Product Dimension</h3>
+          <div class="spec-line">L: {{solara_dimension_l}}</div>
+          <div class="spec-line">M: {{solara_dimension_m}}</div>
+          <div class="spec-line">S: {{solara_dimension_s}}</div>
+
+          <h3 class="spec-title mt">Product Weight</h3>
+          <div class="spec-line">L: {{solara_weight_l}}</div>
+          <div class="spec-line">M: {{solara_weight_m}}</div>
+          <div class="spec-line">S: {{solara_weight_s}}</div>
+        </div>
+
+        <div class="specs-col">
+          <h3 class="spec-title">Color Temperature:</h3>
+          <div class="spec-block">{{solara_color_temp}}</div>
+
+          <h3 class="spec-title">Material:</h3>
+          <div class="spec-block">{{solara_material}}</div>
+
+          <h3 class="spec-title">Charging Method:</h3>
+          <div class="spec-block">{{solara_charging_method}}</div>
+        </div>
+      </div>
+
+      <div class="price-section">
+        <h2 class="price-heading">Unit Price</h2>
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Wireless + Remote</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0–19 Units</td>
+              <td>{{solara_price_wireless_0_19}}</td>
+            </tr>
+            <tr>
+              <td>20+ Units</td>
+              <td>{{solara_price_wireless_20}}</td>
+            </tr>
+            <tr>
+              <td>40+ Units</td>
+              <td>{{solara_price_wireless_40}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="product-footer">
+        <div class="footer-website">{{solara_website_url}}</div>
+        <div class="footer-contact">
+          {{solara_contact_text}}<br>{{solara_contact_email}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 9: SOLARA VARIATIONS ==================== -->
+<div class="page">
+  <div class="variations-container clearfix">
+    <div style="width: 100%; padding: 40px;">
+
+      <div class="var-row">
+        <div class="var-item" style="width: 18%; margin-right: 2.5%;">
+          <div class="var-image">
+            <img src="{{solara_white_s_image}}" alt="White S">
+          </div>
+          <p class="var-label">{{solara_white_s_label}}</p>
+        </div>
+        <div class="var-item" style="width: 18%; margin-right: 2.5%;">
+          <div class="var-image">
+            <img src="{{solara_white_m_image}}" alt="White M">
+          </div>
+          <p class="var-label">{{solara_white_m_label}}</p>
+        </div>
+        <div class="var-item" style="width: 18%; margin-right: 2.5%;">
+          <div class="var-image">
+            <img src="{{solara_white_l_image}}" alt="White L">
+          </div>
+          <p class="var-label">{{solara_white_l_label}}</p>
+        </div>
+        <div class="var-item" style="width: 18%; margin-right: 2.5%;">
+          <div class="var-image">
+            <img src="{{solara_gold_black_s_image}}" alt="Gold Black S">
+          </div>
+          <p class="var-label">{{solara_gold_black_s_label}}</p>
+        </div>
+        <div class="var-item" style="width: 18%; margin-right: 0;">
+          <div class="var-image">
+            <img src="{{solara_gold_white_s_image}}" alt="Gold White S">
+          </div>
+          <p class="var-label">{{solara_gold_white_s_label}}</p>
+        </div>
+      </div>
+
+      <div class="var-row">
+        <div class="var-item" style="width: 18%; margin-right: 2.5%;">
+          <div class="var-image">
+            <img src="{{solara_black_s_image}}" alt="Black S">
+          </div>
+          <p class="var-label">{{solara_black_s_label}}</p>
+        </div>
+        <div class="var-item" style="width: 18%; margin-right: 2.5%;">
+          <div class="var-image">
+            <img src="{{solara_black_m_image}}" alt="Black M">
+          </div>
+          <p class="var-label">{{solara_black_m_label}}</p>
+        </div>
+        <div class="var-item" style="width: 18%; margin-right: 2.5%;">
+          <div class="var-image">
+            <img src="{{solara_black_l_image}}" alt="Black L">
+          </div>
+          <p class="var-label">{{solara_black_l_label}}</p>
+        </div>
+        <div class="var-item" style="width: 18%; margin-right: 2.5%;">
+          <div class="var-image">
+            <img src="{{solara_coffee_black_s_image}}" alt="Coffee Black S">
+          </div>
+          <p class="var-label">{{solara_coffee_black_s_label}}</p>
+        </div>
+        <div class="var-item" style="width: 18%; margin-right: 0;">
+          <div class="var-image">
+            <img src="{{solara_white_gold_s_image}}" alt="White Gold S">
+          </div>
+          <p class="var-label">{{solara_white_gold_s_label}}</p>
+        </div>
+      </div>
+
+      <div class="var-row">
+        <div class="var-item" style="width: 18%; margin-right: 2.5%;">
+          <div class="var-image">
+            <img src="{{solara_coffee_s_image}}" alt="Coffee S">
+          </div>
+          <p class="var-label">{{solara_coffee_s_label}}</p>
+        </div>
+        <div class="var-item" style="width: 18%; margin-right: 2.5%;">
+          <div class="var-image">
+            <img src="{{solara_coffee_m_image}}" alt="Coffee M">
+          </div>
+          <p class="var-label">{{solara_coffee_m_label}}</p>
+        </div>
+        <div class="var-item" style="width: 18%; margin-right: 2.5%;">
+          <div class="var-image">
+            <img src="{{solara_coffee_l_image}}" alt="Coffee L">
+          </div>
+          <p class="var-label">{{solara_coffee_l_label}}</p>
+        </div>
+        <div class="var-item" style="width: 18%; margin-right: 2.5%;">
+          <div class="var-image">
+            <img src="{{solara_coffee_white_s_image}}" alt="Coffee White S">
+          </div>
+          <p class="var-label">{{solara_coffee_white_s_label}}</p>
+        </div>
+        <div class="var-item" style="width: 18%; margin-right: 0;">
+          <div class="var-image">
+            <img src="{{solara_white_black_s_image}}" alt="White Black S">
+          </div>
+          <p class="var-label">{{solara_white_black_s_label}}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 10: AURELIA PRODUCT (USB-C) ==================== -->
+<div class="page">
+  <div class="product-container clearfix">
+
+    <div class="product-left">
+      <div class="product-image-box">
+        <img src="{{aurelia_main_image}}" alt="Aurelia">
+      </div>
+      <div class="product-desc">
+        {{aurelia_description}}
+      </div>
+      <div class="product-tagline">
+        {{aurelia_tagline}}
+      </div>
+    </div>
+
+    <div class="product-middle">
+      <div class="product-name-vert">{{aurelia_product_name}}</div>
+    </div>
+
+    <div class="product-right">
+      <div class="specs-grid clearfix">
+        <div class="specs-col">
+          <h3 class="spec-title">Product Dimension:</h3>
+          <div class="spec-block">{{aurelia_dimension}}</div>
+
+          <h3 class="spec-title">Product Weight:</h3>
+          <div class="spec-block">{{aurelia_weight}}</div>
+        </div>
+
+        <div class="specs-col">
+          <h3 class="spec-title">Color Temperature (CCT):</h3>
+          <div class="spec-block">{{aurelia_color_temp}}</div>
+
+          <h3 class="spec-title">Material:</h3>
+          <div class="spec-block">{{aurelia_material}}</div>
+
+          <h3 class="spec-title">Charging Method:</h3>
+          <div class="spec-block">{{aurelia_charging_method}}</div>
+        </div>
+      </div>
+
+      <div class="price-section">
+        <h2 class="price-heading">Unit Price</h2>
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>USB-C</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0–19 Units</td>
+              <td>{{aurelia_price_usbc_0_19}}</td>
+            </tr>
+            <tr>
+              <td>20+ Units</td>
+              <td>{{aurelia_price_usbc_20}}</td>
+            </tr>
+            <tr>
+              <td>40+ Units</td>
+              <td>{{aurelia_price_usbc_40}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="product-footer">
+        <div class="footer-website">{{aurelia_website_url}}</div>
+        <div class="footer-contact">
+          {{aurelia_contact_text}}<br>{{aurelia_contact_email}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 11: AURELIA VARIATIONS ==================== -->
+<div class="page">
+  <div class="variations-container clearfix">
+
+    <div class="variations-left">
+      <div class="var-row">
+        <div class="var-item">
+          <div class="var-image" style="height: 250px;">
+            <img src="{{aurelia_sand_brown_image}}" alt="Sand Brown">
+          </div>
+          <p class="var-label">{{aurelia_sand_brown_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image" style="height: 250px;">
+            <img src="{{aurelia_metallic_gold_image}}" alt="Metallic Gold">
+          </div>
+          <p class="var-label">{{aurelia_metallic_gold_label}}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="variations-right">
+      <div class="diagram-box">
+        <img src="{{aurelia_dimension_diagram}}" alt="Aurelia Dimensions">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 12: NOVA PRODUCT (USB-C) ==================== -->
+<div class="page">
+  <div class="product-container clearfix">
+
+    <div class="product-left">
+      <div class="product-image-box">
+        <img src="{{nova_main_image}}" alt="Nova">
+      </div>
+      <div class="product-desc">
+        {{nova_description}}
+      </div>
+      <div class="product-tagline">
+        {{nova_tagline}}
+      </div>
+    </div>
+
+    <div class="product-middle">
+      <div class="product-name-vert">{{nova_product_name}}</div>
+    </div>
+
+    <div class="product-right">
+      <div class="specs-grid clearfix">
+        <div class="specs-col">
+          <h3 class="spec-title">Product Dimension:</h3>
+          <div class="spec-block">{{nova_dimension}}</div>
+
+          <h3 class="spec-title">Product Weight:</h3>
+          <div class="spec-block">{{nova_weight}}</div>
+        </div>
+
+        <div class="specs-col">
+          <h3 class="spec-title">Color Temperature (CCT):</h3>
+          <div class="spec-block">{{nova_color_temp}}</div>
+
+          <h3 class="spec-title">Material:</h3>
+          <div class="spec-block">{{nova_material}}</div>
+
+          <h3 class="spec-title">Charging Method:</h3>
+          <div class="spec-block">{{nova_charging_method}}</div>
+        </div>
+      </div>
+
+      <div class="price-section">
+        <h2 class="price-heading">Unit Price</h2>
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>USB-C</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0–19 Units</td>
+              <td>{{nova_price_usbc_0_19}}</td>
+            </tr>
+            <tr>
+              <td>20+ Units</td>
+              <td>{{nova_price_usbc_20}}</td>
+            </tr>
+            <tr>
+              <td>40+ Units</td>
+              <td>{{nova_price_usbc_40}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="product-footer">
+        <div class="footer-website">{{nova_website_url}}</div>
+        <div class="footer-contact">
+          {{nova_contact_text}}<br>{{nova_contact_email}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 13: HALO PRODUCT (Wireless + Remote) ==================== -->
+<div class="page">
+  <div class="product-container clearfix">
+
+    <div class="product-left">
+      <div class="product-image-box">
+        <img src="{{halo_main_image}}" alt="Halo">
+      </div>
+      <div class="product-desc">
+        {{halo_description}}
+      </div>
+      <div class="product-tagline">
+        {{halo_tagline}}
+      </div>
+    </div>
+
+    <div class="product-middle">
+      <div class="product-name-vert">{{halo_product_name}}</div>
+    </div>
+
+    <div class="product-right">
+      <div class="specs-grid clearfix">
+        <div class="specs-col">
+          <h3 class="spec-title">Product Dimension:</h3>
+          <div class="spec-block">{{halo_dimension}}</div>
+
+          <h3 class="spec-title">Product Weight</h3>
+          <div class="spec-block">{{halo_weight}}</div>
+        </div>
+
+        <div class="specs-col">
+          <h3 class="spec-title">Color Temperature:</h3>
+          <div class="spec-block">{{halo_color_temp}}</div>
+
+          <h3 class="spec-title">Material:</h3>
+          <div class="spec-block">{{halo_material}}</div>
+
+          <h3 class="spec-title">Run Time on Full Charge:</h3>
+          <div class="spec-line">High: {{halo_runtime_high}}</div>
+          <div class="spec-line">Medium: {{halo_runtime_medium}}</div>
+          <div class="spec-line">Low: {{halo_runtime_low}}</div>
+        </div>
+      </div>
+
+      <div class="price-section">
+        <h2 class="price-heading">Unit Price</h2>
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Wireless + Remote</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0–19 Units</td>
+              <td>{{halo_price_wireless_0_19}}</td>
+            </tr>
+            <tr>
+              <td>20+ Units</td>
+              <td>{{halo_price_wireless_20}}</td>
+            </tr>
+            <tr>
+              <td>40+ Units</td>
+              <td>{{halo_price_wireless_40}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="product-footer">
+        <div class="footer-website">{{halo_website_url}}</div>
+        <div class="footer-contact">
+          {{halo_contact_text}}<br>{{halo_contact_email}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 14: HALO VARIATIONS ==================== -->
+<div class="page">
+  <div class="variations-container clearfix">
+    <div class="variations-left">
+      <div class="var-row">
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{halo_metallic_gold_image}}" alt="Metallic Gold">
+          </div>
+          <p class="var-label">{{halo_metallic_gold_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{halo_metallic_bronze_image}}" alt="Metallic Bronze">
+          </div>
+          <p class="var-label">{{halo_metallic_bronze_label}}</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="{{halo_metallic_silver_image}}" alt="Metallic Silver">
+          </div>
+          <p class="var-label">{{halo_metallic_silver_label}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="variations-right">
+      <div class="diagram-box">
+        <img src="{{halo_dimension_diagram}}" alt="Halo Dimensions">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 15: VION PRODUCT (Wireless) ==================== -->
+<div class="page">
+  <div class="product-container clearfix">
+
+    <div class="product-left">
+      <div class="product-image-box">
+        <img src="{{vion_main_image}}" alt="Vion">
+      </div>
+      <div class="product-desc">
+        {{vion_description}}
+      </div>
+      <div class="product-tagline">
+        {{vion_tagline}}
+      </div>
+    </div>
+
+    <div class="product-middle">
+      <div class="product-name-vert">{{vion_product_name}}</div>
+    </div>
+
+    <div class="product-right">
+      <div class="specs-grid clearfix">
+        <div class="specs-col">
+          <h3 class="spec-title">Product Dimension:</h3>
+          <div class="spec-block">{{vion_dimension}}</div>
+
+          <h3 class="spec-title">Product Weight</h3>
+          <div class="spec-block">{{vion_weight}}</div>
+        </div>
+
+        <div class="specs-col">
+          <h3 class="spec-title">Color Temperature:</h3>
+          <div class="spec-block">{{vion_color_temp}}</div>
+
+          <h3 class="spec-title">Material:</h3>
+          <div class="spec-block">{{vion_material}}</div>
+
+          <h3 class="spec-title">Run Time on Full Charge:</h3>
+          <div class="spec-line">High: {{vion_runtime_high}}</div>
+          <div class="spec-line">Medium: {{vion_runtime_medium}}</div>
+          <div class="spec-line">Low: {{vion_runtime_low}}</div>
+        </div>
+      </div>
+
+      <div class="price-section">
+        <h2 class="price-heading">Unit Price</h2>
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Wireless</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0–19 Units</td>
+              <td>{{vion_price_wireless_0_19}}</td>
+            </tr>
+            <tr>
+              <td>20+ Units</td>
+              <td>{{vion_price_wireless_20}}</td>
+            </tr>
+            <tr>
+              <td>40+ Units</td>
+              <td>{{vion_price_wireless_40}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="product-footer">
+        <div class="footer-website">{{vion_website_url}}</div>
+        <div class="footer-contact">
+          {{vion_contact_text}}<br>{{vion_contact_email}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
