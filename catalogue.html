@@ -5,7 +5,7 @@
   <title>Luxeillum Catalogue</title>
   <style>
     @page {
-      size: A4;
+      size: A4 landscape;
       margin: 0;
     }
 
@@ -23,8 +23,8 @@
     }
 
     .page {
-      width: 210mm;
-      height: 297mm;
+      width: 297mm;
+      height: 210mm;
       background: #e8ddd0;
       page-break-after: always;
       position: relative;
@@ -40,14 +40,14 @@
     /* COVER PAGE */
     .cover-container {
       width: 100%;
-      height: 297mm;
+      height: 210mm;
     }
 
     .cover-left {
       float: left;
       width: 50%;
-      height: 297mm;
-      padding: 80px 60px;
+      height: 210mm;
+      padding: 60px 60px;
     }
 
     .cover-logo {
@@ -71,7 +71,7 @@
     .cover-right {
       float: right;
       width: 50%;
-      height: 297mm;
+      height: 210mm;
     }
 
     .cover-right img {
@@ -85,27 +85,31 @@
 
     .product-container {
       width: 100%;
-      height: 297mm;
+      height: 210mm;
     }
 
     .product-left {
       float: left;
       width: 40%;
-      height: 297mm;
-      padding: 50px 30px 30px 50px;
+      height: 210mm;
+      padding: 40px 30px 30px 50px;
     }
 
     .product-image-box {
       width: 100%;
-      height: 380px;
-      background: linear-gradient(135deg, #7a8b96 0%, #b5c0c8 100%);
+      height: 320px;
+      background: linear-gradient(135deg, #b09c86 0%, #9b846f 100%);
       margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
     }
 
     .product-image-box img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 92%;
+      max-height: 92%;
+      object-fit: contain;
       display: block;
     }
 
@@ -127,10 +131,10 @@
     .product-middle {
       float: left;
       width: 20%;
-      height: 297mm;
+      height: 210mm;
       background: #cbbda9;
       text-align: center;
-      padding-top: 120px;
+      padding-top: 70px;
     }
 
     .product-name-vert {
@@ -145,8 +149,8 @@
     .product-right {
       float: right;
       width: 40%;
-      height: 297mm;
-      padding: 50px 50px 30px 30px;
+      height: 210mm;
+      padding: 40px 50px 30px 30px;
     }
 
     .specs-grid {
@@ -248,14 +252,14 @@
 
     .variations-container {
       width: 100%;
-      height: 297mm;
+      height: 210mm;
     }
 
     .variations-left {
       float: left;
       width: 60%;
-      height: 297mm;
-      padding: 50px 30px;
+      height: 210mm;
+      padding: 40px 30px;
     }
 
     .var-row {
@@ -283,14 +287,18 @@
     .var-image {
       width: 100%;
       height: 200px;
-      background: linear-gradient(135deg, #7a8b96 0%, #b5c0c8 100%);
+      background: linear-gradient(135deg, #b09c86 0%, #9b846f 100%);
       margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
     }
 
     .var-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      max-width: 92%;
+      max-height: 92%;
+      object-fit: contain;
       display: block;
     }
 
@@ -302,8 +310,8 @@
     .variations-right {
       float: right;
       width: 40%;
-      height: 297mm;
-      padding: 80px 40px;
+      height: 210mm;
+      padding: 60px 40px;
       text-align: center;
     }
 
@@ -330,7 +338,7 @@
       <p class="cover-year">2025</p>
     </div>
     <div class="cover-right">
-      <img src="https://luxeillum.com/wp-content/uploads/20250526_1456_Elegant-Metal-Lamps_remix_01jw5sdxw7ejq8r4eqnej3s5x7.jpg" alt="Cover">
+      <img src="https://luxeillum.com/wp-content/uploads/Screenshot-2025-12-02-at-4.42.20-pm.jpg" alt="Cover">
     </div>
   </div>
 </div>
@@ -434,13 +442,13 @@
         </div>
         <div class="var-item">
           <div class="var-image">
-            <img src="https://luxeillum.com/wp-content/uploads/eclipse-grey-m.jpg" alt="Grey M">
+            <img src="https://luxeillum.com/wp-content/uploads/20250519_1503_Sleek-Studio-Lamp_remix_01jvks122df8nr4gnygtecp1sf.png" alt="Grey M">
           </div>
           <p class="var-label">Grey — M</p>
         </div>
         <div class="var-item">
           <div class="var-image">
-            <img src="https://luxeillum.com/wp-content/uploads/eclipse-grey-l.jpg" alt="Grey L">
+            <img src="https://luxeillum.com/wp-content/uploads/20250519_1502_Sleek-Studio-Lamp_remix_01jvkrymwwfbpa8fp43q4amt2b.png" alt="Grey L">
           </div>
           <p class="var-label">Grey — L</p>
         </div>
@@ -450,13 +458,13 @@
       <div class="var-row">
         <div class="var-item">
           <div class="var-image">
-            <img src="https://luxeillum.com/wp-content/uploads/eclipse-coffee-s.jpg" alt="Coffee S">
+            <img src="https://luxeillum.com/wp-content/uploads/20250519_1524_Sleek-Studio-Lamp_remix_01jvkt8j3qfavvd991a57kjk2r.png" alt="Coffee S">
           </div>
           <p class="var-label">Coffee — S</p>
         </div>
         <div class="var-item">
           <div class="var-image">
-            <img src="https://luxeillum.com/wp-content/uploads/eclipse-coffee-m.jpg" alt="Coffee M">
+            <img src="https://luxeillum.com/wp-content/uploads/20250519_1533_Studio-Lamps-Showcase_remix_01jvktqyxfezesfz54s93sydz8.png" alt="Coffee M">
           </div>
           <p class="var-label">Coffee — M</p>
         </div>
@@ -472,19 +480,19 @@
       <div class="var-row">
         <div class="var-item">
           <div class="var-image">
-            <img src="https://luxeillum.com/wp-content/uploads/eclipse-black-s.jpg" alt="Black S">
+            <img src="https://luxeillum.com/wp-content/uploads/20250519_1421_Minimalist-Studio-Lamp_remix_01jvkpmb06evrtsfexx4vz0rja.png" alt="Black S">
           </div>
           <p class="var-label">Black — S</p>
         </div>
         <div class="var-item">
           <div class="var-image">
-            <img src="https://luxeillum.com/wp-content/uploads/eclipse-black-m.jpg" alt="Black M">
+            <img src="https://luxeillum.com/wp-content/uploads/20250519_1340_Sleek-Studio-Lamp_remix_01jvkm9rm2e6r88y64k35kxb6c.png" alt="Black M">
           </div>
           <p class="var-label">Black — M</p>
         </div>
         <div class="var-item">
           <div class="var-image">
-            <img src="https://luxeillum.com/wp-content/uploads/eclipse-black-l.jpg" alt="Black L">
+            <img src="https://luxeillum.com/wp-content/uploads/20250519_1332_Minimalist-Studio-Lamp_remix_01jvkkt6mzfhgrxcw5p0535msb.png" alt="Black L">
           </div>
           <p class="var-label">Black — L</p>
         </div>
@@ -637,27 +645,6 @@
             <img src="https://luxeillum.com/wp-content/uploads/20250520_1544_Golden-Lamp-Studio_remix_01jvpdr7c5f38876zy6r0avefc.png" alt="Metallic Gold">
           </div>
           <p class="var-label">Metallic Gold</p>
-        </div>
-        <div class="var-item">
-          <div class="var-image">
-            <img src="https://luxeillum.com/wp-content/uploads/elysian-dome-bronze.jpg" alt="Bronze Dome">
-          </div>
-          <p class="var-label">Bronze Dome</p>
-        </div>
-        <div class="var-item">
-          <div class="var-image">
-            <img src="https://luxeillum.com/wp-content/uploads/elysian-dome-silver.jpg" alt="Silver Dome">
-          </div>
-          <p class="var-label">Silver Dome</p>
-        </div>
-      </div>
-
-      <div class="var-row">
-        <div class="var-item">
-          <div class="var-image">
-            <img src="https://luxeillum.com/wp-content/uploads/elysian-dome-gold.jpg" alt="Gold Dome">
-          </div>
-          <p class="var-label">Gold Dome</p>
         </div>
       </div>
 
@@ -1059,12 +1046,6 @@
       <div class="var-row">
         <div class="var-item">
           <div class="var-image" style="height: 250px;">
-            <img src="https://luxeillum.com/wp-content/uploads/aurelia-sand-brown.jpg" alt="Sand Brown">
-          </div>
-          <p class="var-label">Sand Brown</p>
-        </div>
-        <div class="var-item">
-          <div class="var-image" style="height: 250px;">
             <img src="https://luxeillum.com/wp-content/uploads/20250526_1328_Elegant-Table-Lamp_remix_01jw5mcht5fnmbdvpgskazhdam.png" alt="Metallic Gold">
           </div>
           <p class="var-label">Metallic Gold</p>
@@ -1158,7 +1139,48 @@
   </div>
 </div>
 
-<!-- ==================== PAGE 13: HALO PRODUCT (Wireless + Remote) ==================== -->
+<!-- ==================== PAGE 13: NOVA VARIATIONS ==================== -->
+<div class="page">
+  <div class="variations-container clearfix">
+    <div class="variations-left">
+      <div class="var-row">
+        <div class="var-item">
+          <div class="var-image">
+            <img src="https://luxeillum.com/wp-content/uploads/20250526_1218_Studio-Lamp-Showcase_remix_01jw5gcaj2ee48jgq1qaszjemw.png" alt="Nova White">
+          </div>
+          <p class="var-label">Nova White</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="https://luxeillum.com/wp-content/uploads/20250524_0938_Lamp-in-Studio_remix_01jw02ebq6e87vv20qcz4khkcx.png" alt="Nova Metallic Gold">
+          </div>
+          <p class="var-label">Nova Metallic Gold</p>
+        </div>
+        <div class="var-item">
+          <div class="var-image">
+            <img src="https://luxeillum.com/wp-content/uploads/20250524_0936_Studio-Lamp-Showcase_remix_01jw02b5k0f7vbqa0z9czs5pyb.png" alt="Nova Sand Brown">
+          </div>
+          <p class="var-label">Nova Sand Brown</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="variations-right">
+      <div class="diagram-box">
+        <svg viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg" aria-label="Nova Dimensions" style="width:100%; height:auto;">
+          <rect x="40" y="140" width="40" height="20" fill="none" stroke="#4a3c32" stroke-width="1.5" />
+          <rect x="50" y="40" width="20" height="100" rx="6" fill="none" stroke="#4a3c32" stroke-width="1.5" />
+          <circle cx="60" cy="35" r="12" fill="none" stroke="#4a3c32" stroke-width="1.5" />
+          <text x="65" y="20" font-size="8" fill="#4a3c32">Ø14 cm</text>
+          <text x="70" y="110" font-size="8" fill="#4a3c32" transform="rotate(-90 70 110)">24 cm</text>
+          <text x="60" y="170" font-size="8" fill="#4a3c32" text-anchor="middle">Ø9 cm</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== PAGE 14: HALO PRODUCT (Wireless + Remote) ==================== -->
 <div class="page">
   <div class="product-container clearfix">
 
