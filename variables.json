@@ -229,5 +229,16 @@
   "vion_price_wireless_40": "A$125",
   "vion_website_url": "https://luxeillum.com",
   "vion_contact_text": "For bar and counter rollouts please contact:",
-  "vion_contact_email": "sales@luxeillum.com"
+  "vion_contact_email": "sales@luxeillum.com",
+
+  "vion_gold_image": "https://luxeillum.com/wp-content/uploads/heritage-gold.jpg",
+  "vion_black_image": "https://luxeillum.com/wp-content/uploads/heritage-black.jpg",
+  "vion_coffee_image": "https://luxeillum.com/wp-content/uploads/heritage-coffee.jpg",
+  "vion_dimension_diagram": "https://luxeillum.com/wp-content/uploads/heritage-dimensions.png",
+
+  "charging_station_grid_image": "https://luxeillum.com/wp-content/uploads/charging-station-grid.jpg",
+  "wireless_pad_image": "https://luxeillum.com/wp-content/uploads/wireless-charging-pad.jpg",
+  "wireless_station_image": "https://luxeillum.com/wp-content/uploads/wireless-charging-station.jpg",
+  "twenty_two_port_charger_image": "https://luxeillum.com/wp-content/uploads/22-port-usb-charger.jpg",
+  "ten_port_charger_image": "https://luxeillum.com/wp-content/uploads/10-port-usb-charger.jpg"
 }
