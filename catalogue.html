@@ -286,18 +286,19 @@
 
     .var-image {
       width: 100%;
-      height: 200px;
+      height: 220px;
+      aspect-ratio: 3 / 4;
       background: linear-gradient(135deg, #b09c86 0%, #9b846f 100%);
       margin-bottom: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 10px;
+      padding: 12px;
     }
 
     .var-image img {
-      max-width: 92%;
-      max-height: 92%;
+      max-width: 90%;
+      max-height: 90%;
       object-fit: contain;
       display: block;
     }
@@ -325,6 +326,45 @@
       height: auto;
       display: block;
     }
+
+    /* CHARGING PAGE */
+    .charging-hero {
+      position: absolute;
+      left: 90px;
+      bottom: 60px;
+      width: 320px;
+    }
+
+    .charging-grid {
+      position: absolute;
+      right: 140px;
+      top: 70px;
+      width: 320px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px 20px;
+    }
+
+    .charging-card {
+      text-align: center;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .charging-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .charging-card.wide {
+      grid-column: 1 / span 2;
+      width: 70%;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
@@ -333,12 +373,12 @@
 <div class="page">
   <div class="cover-container clearfix">
     <div class="cover-left">
-      <h1 class="cover-logo">luxeillum</h1>
-      <p class="cover-subtitle">Cordless Table Lamp Catalogue</p>
-      <p class="cover-year">2025</p>
+      <h1 class="cover-logo">{{cover_logo}}</h1>
+      <p class="cover-subtitle">{{cover_subtitle}}</p>
+      <p class="cover-year">{{cover_year}}</p>
     </div>
     <div class="cover-right">
-      <img src="https://luxeillum.com/wp-content/uploads/Screenshot-2025-12-02-at-4.42.20-pm.jpg" alt="Cover">
+      <img src="{{cover_main_image}}" alt="Cover">
     </div>
   </div>
 </div>
@@ -502,7 +542,7 @@
 
     <div class="variations-right">
       <div class="diagram-box">
-        <img src="https://luxeillum.com/wp-content/uploads/eclipse-dimensions.png" alt="Eclipse Dimensions">
+        <img src="{{eclipse_dimension_diagram}}" alt="Eclipse Dimensions">
       </div>
     </div>
   </div>
@@ -652,7 +692,7 @@
 
     <div class="variations-right">
       <div class="diagram-box">
-        <img src="https://luxeillum.com/wp-content/uploads/elysian-dimensions.png" alt="Elysian Dimensions">
+        <img src="{{elysian_dimension_diagram}}" alt="Elysian Dimensions">
       </div>
     </div>
   </div>
@@ -767,7 +807,7 @@
 
     <div class="variations-right">
       <div class="diagram-box">
-        <img src="https://luxeillum.com/wp-content/uploads/luna-dimensions.png" alt="Luna Dimensions">
+        <img src="{{luna_dimension_diagram}}" alt="Luna Dimensions">
       </div>
     </div>
   </div>
@@ -782,7 +822,7 @@
         <img src="https://luxeillum.com/wp-content/uploads/20250523_1513_Sleek-Table-Lamps_remix_01jvy36db5e91a501a0ye070rr.jpg" alt="Solara">
       </div>
       <div class="diagram-box" style="margin-top: 30px;">
-        <img src="https://luxeillum.com/wp-content/uploads/solara-sizes.png" alt="Solara Sizes">
+        <img src="{{solara_dimension_diagram}}" alt="Solara Dimensions">
       </div>
     </div>
 
@@ -1055,7 +1095,7 @@
 
     <div class="variations-right">
       <div class="diagram-box">
-        <img src="https://luxeillum.com/wp-content/uploads/aurelia-dimensions.png" alt="Aurelia Dimensions">
+        <img src="{{aurelia_dimension_diagram}}" alt="Aurelia Dimensions">
       </div>
     </div>
   </div>
@@ -1167,14 +1207,7 @@
 
     <div class="variations-right">
       <div class="diagram-box">
-        <svg viewBox="0 0 120 180" xmlns="http://www.w3.org/2000/svg" aria-label="Nova Dimensions" style="width:100%; height:auto;">
-          <rect x="40" y="140" width="40" height="20" fill="none" stroke="#4a3c32" stroke-width="1.5" />
-          <rect x="50" y="40" width="20" height="100" rx="6" fill="none" stroke="#4a3c32" stroke-width="1.5" />
-          <circle cx="60" cy="35" r="12" fill="none" stroke="#4a3c32" stroke-width="1.5" />
-          <text x="65" y="20" font-size="8" fill="#4a3c32">Ø14 cm</text>
-          <text x="70" y="110" font-size="8" fill="#4a3c32" transform="rotate(-90 70 110)">24 cm</text>
-          <text x="60" y="170" font-size="8" fill="#4a3c32" text-anchor="middle">Ø9 cm</text>
-        </svg>
+        <img src="{{nova_dimension_diagram}}" alt="Nova Dimensions">
       </div>
     </div>
   </div>
@@ -1287,7 +1320,7 @@
     </div>
     <div class="variations-right">
       <div class="diagram-box">
-        <img src="https://luxeillum.com/wp-content/uploads/halo-dimensions.png" alt="Halo Dimensions">
+        <img src="{{halo_dimension_diagram}}" alt="Halo Dimensions">
       </div>
     </div>
   </div>
@@ -1412,7 +1445,7 @@
   <div class="clearfix" style="height: 297mm; padding: 40px 50px; position: relative;">
     <div style="position: absolute; left: 60px; top: 120px; font-size: 72px; writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: 2px; color: #1f1b18;">Charging</div>
 
-    <div style="position: absolute; left: 90px; bottom: 60px; width: 320px;">
+    <div class="charging-hero">
       <img src="{{charging_station_grid_image}}" alt="Charging Station Display" style="width: 100%; height: auto; display: block;">
     </div>
 
@@ -1421,28 +1454,22 @@
       <p style="margin-top: 16px;">Learn more at <a href="https://luxeillum.com/au/charging" style="color: inherit; text-decoration: none;">https://luxeillum.com/au/charging</a></p>
     </div>
 
-    <div style="position: absolute; right: 420px; top: 70px; width: 140px; text-align: center; font-size: 11px; line-height: 1.5;">
-      <img src="{{wireless_pad_image}}" alt="Wireless Charging Pad" style="width: 100%; height: auto; display: block; margin-bottom: 6px;">
-      <div>Wireless Charging Pad</div>
-      <div>A$89</div>
-    </div>
-
-    <div style="position: absolute; right: 220px; top: 70px; width: 140px; text-align: center; font-size: 11px; line-height: 1.5;">
-      <img src="{{wireless_station_image}}" alt="Wireless Charging Station" style="width: 100%; height: auto; display: block; margin-bottom: 6px;">
-      <div>Wireless Charging Station</div>
-      <div>A$84</div>
-    </div>
-
-    <div style="position: absolute; right: 420px; bottom: 80px; width: 140px; text-align: center; font-size: 11px; line-height: 1.5;">
-      <img src="{{twenty_two_port_charger_image}}" alt="22 Port USB Charger" style="width: 100%; height: auto; display: block; margin-bottom: 6px;">
-      <div>22 Port USB Charger</div>
-      <div>A$86</div>
-    </div>
-
-    <div style="position: absolute; right: 220px; bottom: 80px; width: 140px; text-align: center; font-size: 11px; line-height: 1.5;">
-      <img src="{{ten_port_charger_image}}" alt="10 Port USB Charger" style="width: 100%; height: auto; display: block; margin-bottom: 6px;">
-      <div>10 Port USB Charger</div>
-      <div>A$69</div>
+    <div class="charging-grid">
+      <div class="charging-card">
+        <img src="{{six_in_one_charger_image}}" alt="6-in-1 Wireless Charger">
+        <div>6-in-1 Wireless Charger</div>
+        <div>A$84</div>
+      </div>
+      <div class="charging-card">
+        <img src="{{two_in_one_charger_image}}" alt="2-in-1 Wireless Charger">
+        <div>2-in-1 Wireless Charger</div>
+        <div>A$89</div>
+      </div>
+      <div class="charging-card wide">
+        <img src="{{twenty_two_port_charger_image}}" alt="22-Port USB Charger">
+        <div>22-Port USB Charger</div>
+        <div>A$86</div>
+      </div>
     </div>
   </div>
 </div>
@@ -1452,7 +1479,7 @@
   <div class="cover-container clearfix">
     <div class="cover-left">
       <h1 class="cover-logo">{{cover_logo}}</h1>
-      <p class="cover-subtitle">Cordless Table Lamp Catalog</p>
+      <p class="cover-subtitle">{{cover_subtitle}}</p>
       <p class="cover-year">{{cover_year}}</p>
     </div>
     <div class="cover-right" style="background: #d4c7b5;"></div>
