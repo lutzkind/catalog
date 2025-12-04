@@ -113,6 +113,16 @@
       display: block;
     }
 
+    .product-image-large {
+      height: 380px;
+      padding: 18px;
+    }
+
+    .product-image-large img {
+      max-width: 96%;
+      max-height: 96%;
+    }
+
     .product-desc {
       font-size: 11px;
       line-height: 1.6;
@@ -348,11 +358,27 @@
     }
 
     /* CHARGING PAGE */
-    .charging-hero {
+    .charging-left {
       position: absolute;
       left: 220px;
-      top: 80px;
+      top: 70px;
       width: 360px;
+    }
+
+    .charging-hero {
+      width: 100%;
+    }
+
+    .charging-hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .charging-copy {
+      margin-top: 18px;
+      font-size: 11px;
+      line-height: 1.7;
     }
 
     .charging-grid {
@@ -724,7 +750,7 @@
   <div class="product-container clearfix">
 
     <div class="product-left">
-      <div class="product-image-box">
+      <div class="product-image-box product-image-large">
         <img src="https://luxeillum.com/wp-content/uploads/20250522_1646_Stylish-Table-Lamps_remix_01jvvp321negj9eqakk3kabmm9.jpg" alt="Luna">
       </div>
       <div class="product-desc">
@@ -1110,7 +1136,7 @@
   <div class="product-container clearfix">
 
     <div class="product-left">
-      <div class="product-image-box">
+      <div class="product-image-box product-image-large">
         <img src="https://luxeillum.com/wp-content/uploads/20250524_1109_Elegant-Gold-Lamp_remix_01jw07nashfrzv12836mmt95bn.jpg" alt="Nova">
       </div>
       <div class="product-desc">
@@ -1223,7 +1249,7 @@
   <div class="product-container clearfix">
 
     <div class="product-left">
-      <div class="product-image-box">
+      <div class="product-image-box product-image-large">
         <img src="https://luxeillum.com/wp-content/uploads/20250526_1456_Elegant-Metal-Lamps_remix_01jw5sdxw7ejq8r4eqnej3s5x7.jpg" alt="Halo">
       </div>
       <div class="product-desc">
@@ -1337,7 +1363,7 @@
   <div class="product-container clearfix">
 
     <div class="product-left">
-      <div class="product-image-box">
+      <div class="product-image-box product-image-large">
         <img src="https://luxeillum.com/wp-content/uploads/20250526_1625_Minimalist-Lamp-Trio_remix_01jw5ygpy5f5n8ajrndq479knm.jpg" alt="Vion">
       </div>
       <div class="product-desc">
@@ -1452,13 +1478,15 @@
   <div class="clearfix" style="height: 297mm; padding: 40px 50px; position: relative;">
     <div style="position: absolute; left: 60px; top: 120px; font-size: 72px; writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: 2px; color: #1f1b18;">Charging</div>
 
-    <div class="charging-hero">
-      <img src="{{charging_hero_image}}" alt="Charging Station Display" style="width: 100%; height: auto; display: block;">
-    </div>
+    <div class="charging-left">
+      <div class="charging-hero">
+        <img src="{{charging_hero_image}}" alt="Charging Station Display">
+      </div>
 
-    <div style="position: absolute; left: 220px; top: 260px; width: 360px; font-size: 11px; line-height: 1.7;">
-      <p>Introducing our innovative Charging Station, a masterpiece of modern convenience. Designed to charge up to six lamps at once, this wireless powerhouse is as sleek as it is efficient.</p>
-      <p style="margin-top: 16px;">Learn more at <a href="https://luxeillum.com/au/charging" style="color: inherit; text-decoration: none;">https://luxeillum.com/au/charging</a></p>
+      <div class="charging-copy">
+        <p>Introducing our innovative Charging Station, a masterpiece of modern convenience. Designed to charge up to six lamps at once, this wireless powerhouse is as sleek as it is efficient.</p>
+        <p style="margin-top: 16px;">Learn more at <a href="https://luxeillum.com/au/charging" style="color: inherit; text-decoration: none;">https://luxeillum.com/au/charging</a></p>
+      </div>
     </div>
 
     <div class="charging-grid">
