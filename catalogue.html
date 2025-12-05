@@ -113,6 +113,16 @@
       display: block;
     }
 
+    .product-image-large {
+      height: 380px;
+      padding: 18px;
+    }
+
+    .product-image-large img {
+      max-width: 96%;
+      max-height: 96%;
+    }
+
     .product-desc {
       font-size: 11px;
       line-height: 1.6;
@@ -286,7 +296,7 @@
 
     .var-image {
       width: 100%;
-      height: 220px;
+      height: 195px;
       aspect-ratio: 3 / 4;
       background: #e5d6c5;
       margin-bottom: 10px;
@@ -330,10 +340,11 @@
     }
 
     .diagram-box img {
-      width: 75%;
       max-width: 240px;
       max-height: 240px;
+      width: auto;
       height: auto;
+      object-fit: contain;
       display: block;
       margin: 0 auto;
     }
@@ -347,11 +358,28 @@
     }
 
     /* CHARGING PAGE */
-    .charging-hero {
+    .charging-left {
       position: absolute;
-      left: 90px;
-      bottom: 60px;
-      width: 320px;
+      left: 220px;
+      top: 70px;
+      width: 360px;
+    }
+
+    .charging-hero {
+      width: 100%;
+      margin-bottom: 22px;
+    }
+
+    .charging-hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .charging-copy {
+      margin-top: 18px;
+      font-size: 11px;
+      line-height: 1.7;
     }
 
     .charging-grid {
@@ -376,8 +404,9 @@
       object-fit: contain;
       display: block;
       margin: 0 auto 8px;
-      border: 1px solid rgba(0, 0, 0, 0.08);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border: none;
+      box-shadow: none;
+      background: transparent;
     }
 
     .charging-card.wide {
@@ -478,7 +507,7 @@
       </div>
 
       <div class="product-footer">
-        <div class="footer-website">https://luxeillum.com</div>
+        <div class="footer-website"><a href="https://luxeillum.com" style="color: inherit; text-decoration: none;">https://luxeillum.com</a></div>
         <div class="footer-contact">
           For trade pricing and bulk orders please contact:<br>sales@luxeillum.com
         </div>
@@ -491,9 +520,6 @@
 <div class="page">
   <div class="variations-container clearfix">
     <div class="variations-left">
-
-      <!-- Row 1: Grey -->
-      <div class="var-row-title">White & Gold Finishes</div>
 
       <div class="var-row">
         <div class="var-item">
@@ -516,9 +542,6 @@
         </div>
       </div>
 
-      <!-- Row 2: Coffee -->
-      <div class="var-row-title">Black & Mixed Accents</div>
-
       <div class="var-row">
         <div class="var-item">
           <div class="var-image">
@@ -539,9 +562,6 @@
           <p class="var-label">Coffee — L</p>
         </div>
       </div>
-
-      <!-- Row 3: Black -->
-      <div class="var-row-title">Coffee & Combination Finishes</div>
 
       <div class="var-row">
         <div class="var-item">
@@ -649,7 +669,7 @@
       </div>
 
       <div class="product-footer">
-        <div class="footer-website">https://luxeillum.com</div>
+        <div class="footer-website"><a href="https://luxeillum.com" style="color: inherit; text-decoration: none;">https://luxeillum.com</a></div>
         <div class="footer-contact">
           For hospitality packs and samples please contact:<br>sales@luxeillum.com
         </div>
@@ -731,7 +751,7 @@
   <div class="product-container clearfix">
 
     <div class="product-left">
-      <div class="product-image-box">
+      <div class="product-image-box product-image-large">
         <img src="https://luxeillum.com/wp-content/uploads/20250522_1646_Stylish-Table-Lamps_remix_01jvvp321negj9eqakk3kabmm9.jpg" alt="Luna">
       </div>
       <div class="product-desc">
@@ -797,7 +817,7 @@
       </div>
 
       <div class="product-footer">
-        <div class="footer-website">https://luxeillum.com</div>
+        <div class="footer-website"><a href="https://luxeillum.com" style="color: inherit; text-decoration: none;">https://luxeillum.com</a></div>
         <div class="footer-contact">
           For package pricing and availability please contact:<br>sales@luxeillum.com
         </div>
@@ -913,7 +933,7 @@
       </div>
 
       <div class="product-footer">
-        <div class="footer-website">https://luxeillum.com</div>
+        <div class="footer-website"><a href="https://luxeillum.com" style="color: inherit; text-decoration: none;">https://luxeillum.com</a></div>
         <div class="footer-contact">
           For cluster and outdoor packs please contact:<br>sales@luxeillum.com
         </div>
@@ -926,8 +946,6 @@
 <div class="page">
   <div class="variations-container clearfix">
     <div style="width: 100%; padding: 40px;">
-
-      <div class="var-row-title">White & Gold Finishes</div>
 
       <div class="var-row">
         <div class="var-item" style="width: 18%; margin-right: 2.5%;">
@@ -962,8 +980,6 @@
         </div>
       </div>
 
-      <div class="var-row-title">Black & Mixed Accents</div>
-
       <div class="var-row">
         <div class="var-item" style="width: 18%; margin-right: 2.5%;">
           <div class="var-image">
@@ -996,8 +1012,6 @@
           <p class="var-label">White/Gold — S</p>
         </div>
       </div>
-
-      <div class="var-row-title">Coffee & Combination Finishes</div>
 
       <div class="var-row">
         <div class="var-item" style="width: 18%; margin-right: 2.5%;">
@@ -1043,6 +1057,10 @@
     <div class="product-left">
       <div class="product-image-box">
         <img src="https://luxeillum.com/wp-content/uploads/20250526_1321_Elegant-Lamp-Design_remix_01jw5kzbkheq588fyx0d2nwvys.jpg" alt="Aurelia">
+      </div>
+      <h3 class="dimensions-heading">Dimensions</h3>
+      <div class="diagram-box" style="margin-top: 30px;">
+        <img src="https://luxeillum.com/wp-content/uploads/elysianmm-2.png-e1748492536846.png" alt="Aurelia Dimensions">
       </div>
       <div class="product-desc">
         Aurelia offers a tall, slender stem and a softly flared shade, ideal for centrepieces and bars.
@@ -1105,34 +1123,10 @@
       </div>
 
       <div class="product-footer">
-        <div class="footer-website">https://luxeillum.com</div>
+        <div class="footer-website"><a href="https://luxeillum.com" style="color: inherit; text-decoration: none;">https://luxeillum.com</a></div>
         <div class="footer-contact">
           For sample sets and finish options please contact:<br>sales@luxeillum.com
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ==================== PAGE 11: AURELIA VARIATIONS ==================== -->
-<div class="page">
-  <div class="variations-container clearfix">
-
-    <div class="variations-left">
-      <div class="var-row">
-        <div class="var-item">
-          <div class="var-image">
-            <img src="https://luxeillum.com/wp-content/uploads/20250526_1328_Elegant-Table-Lamp_remix_01jw5mcht5fnmbdvpgskazhdam.png" alt="Metallic Gold">
-          </div>
-          <p class="var-label">Metallic Gold</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="variations-right">
-      <h3 class="dimensions-heading">Dimensions</h3>
-      <div class="diagram-box">
-        <img src="https://luxeillum.com/wp-content/uploads/elysianmm-2.png-e1748492536846.png" alt="Aurelia Dimensions">
       </div>
     </div>
   </div>
@@ -1143,7 +1137,7 @@
   <div class="product-container clearfix">
 
     <div class="product-left">
-      <div class="product-image-box">
+      <div class="product-image-box product-image-large">
         <img src="https://luxeillum.com/wp-content/uploads/20250524_1109_Elegant-Gold-Lamp_remix_01jw07nashfrzv12836mmt95bn.jpg" alt="Nova">
       </div>
       <div class="product-desc">
@@ -1207,7 +1201,7 @@
       </div>
 
       <div class="product-footer">
-        <div class="footer-website">https://luxeillum.com</div>
+        <div class="footer-website"><a href="https://luxeillum.com" style="color: inherit; text-decoration: none;">https://luxeillum.com</a></div>
         <div class="footer-contact">
           For multi-site rollouts please contact:<br>sales@luxeillum.com
         </div>
@@ -1256,7 +1250,7 @@
   <div class="product-container clearfix">
 
     <div class="product-left">
-      <div class="product-image-box">
+      <div class="product-image-box product-image-large">
         <img src="https://luxeillum.com/wp-content/uploads/20250526_1456_Elegant-Metal-Lamps_remix_01jw5sdxw7ejq8r4eqnej3s5x7.jpg" alt="Halo">
       </div>
       <div class="product-desc">
@@ -1322,7 +1316,7 @@
       </div>
 
       <div class="product-footer">
-        <div class="footer-website">https://luxeillum.com</div>
+        <div class="footer-website"><a href="https://luxeillum.com" style="color: inherit; text-decoration: none;">https://luxeillum.com</a></div>
         <div class="footer-contact">
           For event and banqueting packages please contact:<br>sales@luxeillum.com
         </div>
@@ -1370,7 +1364,7 @@
   <div class="product-container clearfix">
 
     <div class="product-left">
-      <div class="product-image-box">
+      <div class="product-image-box product-image-large">
         <img src="https://luxeillum.com/wp-content/uploads/20250526_1625_Minimalist-Lamp-Trio_remix_01jw5ygpy5f5n8ajrndq479knm.jpg" alt="Vion">
       </div>
       <div class="product-desc">
@@ -1436,7 +1430,7 @@
       </div>
 
       <div class="product-footer">
-        <div class="footer-website">https://luxeillum.com</div>
+        <div class="footer-website"><a href="https://luxeillum.com" style="color: inherit; text-decoration: none;">https://luxeillum.com</a></div>
         <div class="footer-contact">
           For bar and counter rollouts please contact:<br>sales@luxeillum.com
         </div>
@@ -1485,13 +1479,15 @@
   <div class="clearfix" style="height: 297mm; padding: 40px 50px; position: relative;">
     <div style="position: absolute; left: 60px; top: 120px; font-size: 72px; writing-mode: vertical-rl; transform: rotate(180deg); letter-spacing: 2px; color: #1f1b18;">Charging</div>
 
-    <div class="charging-hero">
-      <img src="https://luxeillum.com/wp-content/uploads/20250523_1520_Lamps-on-Wooden-Countertop_remix_01jvy3k3hcfr3b2b88b4qs115r.jpg" alt="Charging Station Display" style="width: 100%; height: auto; display: block;">
-    </div>
+    <div class="charging-left">
+      <div class="charging-hero">
+        <img src="https://luxeillum.com/wp-content/uploads/20251203_1648_Elegant-Table-Lamps_remix_01kbhsq63yeq39g84zy0h4w3pg.jpg" alt="Charging Station Display">
+      </div>
 
-    <div style="position: absolute; left: 220px; top: 260px; width: 360px; font-size: 11px; line-height: 1.7;">
-      <p>Introducing our innovative Charging Station, a masterpiece of modern convenience. Designed to charge up to six lamps at once, this wireless powerhouse is as sleek as it is efficient.</p>
-      <p style="margin-top: 16px;">Learn more at <a href="https://luxeillum.com/au/charging" style="color: inherit; text-decoration: none;">https://luxeillum.com/au/charging</a></p>
+      <div class="charging-copy">
+        <p>Introducing our innovative Charging Station, a masterpiece of modern convenience. Designed to charge up to six lamps at once, this wireless powerhouse is as sleek as it is efficient.</p>
+        <p style="margin-top: 16px;">Learn more at <a href="https://luxeillum.com/au/charging" style="color: inherit; text-decoration: none;">https://luxeillum.com/au/charging</a></p>
+      </div>
     </div>
 
     <div class="charging-grid">
